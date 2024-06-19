@@ -1,4 +1,5 @@
 import Hero from "../components/Hero";
+import Products from "../components/Products";
 import Service from "../components/Service";
 
 function Home() {
@@ -6,6 +7,7 @@ function Home() {
     <div>
       <Hero />
       <Service />
+      <Products />
     </div>
   );
 }

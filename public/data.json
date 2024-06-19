@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "coffee_name": "Ethiopian Yirgacheffe",
+    "chef_name": "Lara Smith",
+    "supplier": "Yirgacheffe Coffee Farmers Cooperative",
+    "taste": "Floral, Citrus, Tea-like",
+    "category": "Single Origin",
+    "details": "A bright and floral coffee with a tea-like body and a citrusy finish. Grown in the Yirgacheffe region of Ethiopia.",
+    "price": 500,
+    "photo": "../src/assets/1.png"
+  },
+  {
+    "id": 2,
+    "coffee_name": "Colombian Supremo",
+    "chef_name": "John Doe",
+    "supplier": "Colombian Coffee Growers Federation",
+    "taste": "Nutty, Chocolatey, Fruity",
+    "category": "Single Origin",
+    "details": "A rich and full-bodied coffee with notes of nuts, chocolate, and a hint of fruit. Sourced from the high-altitude regions of Colombia.",
+    "price": 700,
+    "photo": "../src/assets/2.png"
+  },
+  {
+    "id": 3,
+    "coffee_name": "Sumatra Mandheling",
+    "chef_name": "Emily Davis",
+    "supplier": "Sumatra Coffee Cooperative",
+    "taste": "Earthy, Spicy, Chocolatey",
+    "category": "Single Origin",
+    "details": "A bold and earthy coffee with spicy notes and a deep chocolatey flavor. Grown in the Mandheling region of Sumatra, Indonesia.",
+    "price": 500,
+    "photo": "../src/assets/3.png"
+  },
+  {
+    "id": 4,
+    "coffee_name": "Guatemala Antigua",
+    "chef_name": "Robert Brown",
+    "supplier": "Antigua Coffee Farmers",
+    "taste": "Fruity, Chocolatey, Spicy",
+    "category": "Single Origin",
+    "details": "A well-balanced coffee with a fruity and chocolatey profile, complemented by a hint of spice. Sourced from the Antigua region of Guatemala.",
+    "price": 400,
+    "photo": "../src/assets/4.png"
+  },
+  {
+    "id": 5,
+    "coffee_name": "Kenya AA",
+    "chef_name": "Alice Johnson",
+    "supplier": "Kenya Coffee Farmers",
+    "taste": "Fruity, Wine-like, Bright",
+    "category": "Single Origin",
+    "details": "A vibrant and bright coffee with fruity and wine-like flavors. Grown in the highlands of Kenya.",
+    "price": 600,
+    "photo": "../src/assets/5.png"
+  },
+  {
+    "id": 6,
+    "coffee_name": "Brazil Santos",
+    "chef_name": "Michael Green",
+    "supplier": "Brazilian Coffee Cooperative",
+    "taste": "Nutty, Sweet, Low Acidity",
+    "category": "Single Origin",
+    "details": "A smooth and sweet coffee with nutty undertones and low acidity. Sourced from the Santos region of Brazil.",
+    "price": 300,
+    "photo": "../src/assets/6.png"
+  }
+]
