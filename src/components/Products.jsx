@@ -26,7 +26,7 @@ function Products() {
       <h1 className="font-rancho text-[45px] lg:text-[55px] text-center font-semibold text-[#331A15]">
         Our Popular Products
       </h1>
-      <Link>
+      <Link to="/add-coffee">
         <button className="bg-[#E3B577] font-rancho px-4 py-2 border-2 border-[#331A15] flex gap-2 items-center mx-auto rounded-md hover:bg-[#331A15] hover:text-white cursor-pointer">
           <p className="text-white">Add Coffee</p>
           <FaCoffee />
