@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa6";
 
-function AddCoffee() {
+function UpdateCoffee() {
   return (
     <div className="my-[120px]">
       <div>
@@ -12,10 +12,10 @@ function AddCoffee() {
       </div>
       <div className="mt-[50px] bg-[#F4F3F0] p-8 lg:p-16">
         <h1 className="font-rancho font-semibold text-[#374151] text-[35px] lg:text-[45px] text-center">
-          Add New Coffee
+          Update Existing Coffee Details
         </h1>
         <p className="font-raleway text-center text-gray-500 mt-2">
-          It is a long established fact that a reader will be distracted by the
+          It is a long established fact that a reader will be distraceted by the
           readable content of a page when looking at its layout. The point of
           using Lorem Ipsum is that it has a more-or-less normal distribution of
           letters, as opposed to using Content here.
@@ -111,4 +111,4 @@ function AddCoffee() {
   );
 }
 
-export default AddCoffee;
+export default UpdateCoffee;

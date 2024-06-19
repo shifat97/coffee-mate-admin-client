@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { FaRegEye, FaPen } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 function Product({ coffee }) {
   return (
@@ -27,9 +28,11 @@ function Product({ coffee }) {
         <div className="bg-[#D2B48C] p-2 rounded-md text-white cursor-pointer">
           <FaRegEye />
         </div>
-        <div className="bg-[#3C393B] p-2 rounded-md text-white cursor-pointer">
-          <FaPen />
-        </div>
+        <Link to="/update-coffee">
+          <div className="bg-[#3C393B] p-2 rounded-md text-white cursor-pointer">
+            <FaPen />
+          </div>
+        </Link>
         <div className="bg-[#EA4744] p-2 rounded-md text-white cursor-pointer">
           <MdDelete />
         </div>
