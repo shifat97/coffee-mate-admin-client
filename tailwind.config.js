@@ -7,6 +7,10 @@ export default {
         raleway: ["Raleway", "sans-serif"],
         rancho: ["Rancho", "cursive"],
       },
+      backgroundImage: {
+        "header-bg": "url('./src/assets/more/15.jpg')",
+        "footer-bg": "url('./src/assets/more/13.jpg')",
+      },
     },
   },
   plugins: [require("daisyui")],
