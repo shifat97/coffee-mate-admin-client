@@ -30,7 +30,7 @@ function Product({ coffee }) {
         </p>
       </div>
       <div className="flex md:flex-col gap-2">
-        <Link to="/view-product">
+        <Link to={`/view-product/${coffee._id}`}>
           <div className="bg-[#D2B48C] p-2 rounded-md text-white cursor-pointer">
             <FaRegEye />
           </div>

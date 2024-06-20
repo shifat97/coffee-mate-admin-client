@@ -28,8 +28,10 @@ const router = createBrowserRouter([
         element: <UpdateCoffee />,
       },
       {
-        path: "view-product",
+        path: "/view-product/:id",
         element: <ViewProduct />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/view-product/${params.id}`),
       },
     ],
   },

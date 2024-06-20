@@ -34,7 +34,7 @@ function Products() {
       </Link>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-10">
         {data.map((d) => (
-          <Product key={d.id} coffee={d} />
+          <Product key={d._id} coffee={d} />
         ))}
       </div>
       <div className="my-[120px]">
