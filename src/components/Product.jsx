@@ -2,8 +2,13 @@ import PropTypes from "prop-types";
 import { FaRegEye, FaPen } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { MdErrorOutline } from "react-icons/md";
+import { FaRegCheckCircle } from "react-icons/fa";
+import { useState } from "react";
 
 function Product({ coffee }) {
+  const [deleted, setDeleted] = useState(false);
+
   return (
     <div className="bg-[#F5F4F1] flex flex-col md:flex-row gap-4 items-center justify-between p-8 rounded-xl font-raleway text-[#1B1A1A] text-center md:text-left">
       <div>
@@ -21,7 +26,7 @@ function Product({ coffee }) {
         <p>
           <b>Price: </b>
           {coffee.price}
-          Taka
+          <span className="ml-1">Taka</span>
         </p>
       </div>
       <div className="flex md:flex-col gap-2">
@@ -33,10 +38,61 @@ function Product({ coffee }) {
             <FaPen />
           </div>
         </Link>
-        <div className="bg-[#EA4744] p-2 rounded-md text-white cursor-pointer">
+        <div
+          className="bg-[#EA4744] p-2 rounded-md text-white cursor-pointer"
+          onClick={() => document.getElementById("my_modal_5").showModal()}
+        >
           <MdDelete />
         </div>
       </div>
+
+      <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box">
+          {deleted ? (
+            <FaRegCheckCircle className="text-[#A5DC86] text-[120px] text-center mx-auto" />
+          ) : (
+            <MdErrorOutline className="text-[#F8BB86] text-[120px] text-center mx-auto" />
+          )}
+          {deleted ? (
+            <h3 className="font-raleway text-xl font-semibold text-center mt-4">
+              Good Luck !!!
+            </h3>
+          ) : (
+            <h3 className="font-raleway text-xl font-semibold text-center mt-4">
+              Are you sure?
+            </h3>
+          )}
+          {deleted ? (
+            <p className="font-raleway text-md text-center mt-4">
+              Deleted coffee details
+            </p>
+          ) : (
+            <p className="font-raleway text-md text-center mt-4">
+              Are you sure that you want to delete it?
+            </p>
+          )}
+          <div className="modal-action">
+            <form method="dialog">
+              <button
+                onClick={() => setDeleted(false)}
+                className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+              >
+                ✕
+              </button>
+            </form>
+            <button
+              onClick={() => {
+                setDeleted(true);
+              }}
+              className={`btn  ${
+                deleted ? "bg-[#63C7F6]" : "bg-[#E64942]"
+              } text-white focus:ring-0 hover:bg-black`}
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      </dialog>
     </div>
   );
 }
