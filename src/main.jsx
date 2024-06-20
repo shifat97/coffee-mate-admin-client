@@ -4,8 +4,8 @@ import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home.jsx";
-import AddCoffee from "./components/AddCoffee.jsx";
-import UpdateCoffee from "./components/UpdateCoffee.jsx";
+import AddCoffee from "./pages/AddCoffee.jsx";
+import UpdateCoffee from "./pages/UpdateCoffee.jsx";
 import Error from "./pages/Error.jsx";
 
 const router = createBrowserRouter([
