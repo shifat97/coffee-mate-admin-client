@@ -12,16 +12,16 @@ function Product({ coffee }) {
   return (
     <div className="bg-[#F5F4F1] flex flex-col md:flex-row gap-4 items-center justify-between p-8 rounded-xl font-raleway text-[#1B1A1A] text-center md:text-left">
       <div>
-        <img src={coffee.photo} alt="" />
+        <img width={300} src={coffee.photo} alt="" />
       </div>
       <div className="flex flex-col gap-2">
         <p>
           <b>Name: </b>
-          {coffee.coffee_name}
+          {coffee.name}
         </p>
         <p>
           <b>Chef: </b>
-          {coffee.chef_name}
+          {coffee.chef}
         </p>
         <p>
           <b>Price: </b>
@@ -30,9 +30,11 @@ function Product({ coffee }) {
         </p>
       </div>
       <div className="flex md:flex-col gap-2">
-        <div className="bg-[#D2B48C] p-2 rounded-md text-white cursor-pointer">
-          <FaRegEye />
-        </div>
+        <Link to="/view-product">
+          <div className="bg-[#D2B48C] p-2 rounded-md text-white cursor-pointer">
+            <FaRegEye />
+          </div>
+        </Link>
         <Link to="/update-coffee">
           <div className="bg-[#3C393B] p-2 rounded-md text-white cursor-pointer">
             <FaPen />

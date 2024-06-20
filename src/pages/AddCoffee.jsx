@@ -1,7 +1,36 @@
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa6";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function AddCoffee() {
+  const handleAddCoffee = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const chef = e.target.chef.value;
+    const supplier = e.target.supplier.value;
+    const taste = e.target.taste.value;
+    const category = e.target.category.value;
+    const price = e.target.price.value;
+    const photo = e.target.photo.value;
+
+    const product = { name, chef, supplier, taste, category, price, photo };
+
+    fetch("http://localhost:5000/add-coffee", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(product),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          toast("Product added successfully");
+        }
+      });
+  };
+
   return (
     <div className="my-[120px]">
       <div>
@@ -20,7 +49,10 @@ function AddCoffee() {
           using Lorem Ipsum is that it has a more-or-less normal distribution of
           letters, as opposed to using Content here.
         </p>
-        <form className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <form
+          onSubmit={handleAddCoffee}
+          className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8"
+        >
           <div>
             <label className="block font-bold" htmlFor="name">
               Name
@@ -107,6 +139,7 @@ function AddCoffee() {
           </div>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 }

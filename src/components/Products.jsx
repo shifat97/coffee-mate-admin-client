@@ -15,7 +15,7 @@ function Products() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("data.json")
+    fetch("http://localhost:5000/")
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);

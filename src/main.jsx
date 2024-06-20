@@ -7,6 +7,7 @@ import Home from "./pages/Home.jsx";
 import AddCoffee from "./pages/AddCoffee.jsx";
 import UpdateCoffee from "./pages/UpdateCoffee.jsx";
 import Error from "./pages/Error.jsx";
+import ViewProduct from "./pages/ViewProduct.jsx";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/update-coffee",
         element: <UpdateCoffee />,
+      },
+      {
+        path: "view-product",
+        element: <ViewProduct />,
       },
     ],
   },
