@@ -35,7 +35,7 @@ function Product({ coffee }) {
             <FaRegEye />
           </div>
         </Link>
-        <Link to="/update-coffee">
+        <Link to={`/update-coffee/${coffee._id}`}>
           <div className="bg-[#3C393B] p-2 rounded-md text-white cursor-pointer">
             <FaPen />
           </div>

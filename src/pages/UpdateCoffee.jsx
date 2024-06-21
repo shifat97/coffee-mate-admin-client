@@ -1,7 +1,40 @@
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa6";
 
 function UpdateCoffee() {
+  const loadedProduct = useLoaderData();
+
+  const handleUpdateProduct = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const chef = e.target.chef.value;
+    const supplier = e.target.supplier.value;
+    const taste = e.target.taste.value;
+    const category = e.target.category.value;
+    const price = e.target.price.value;
+
+    const updatedProduct = {
+      name,
+      chef,
+      supplier,
+      taste,
+      category,
+      price,
+    };
+
+    fetch(`http://localhost:5000/view-product/${loadedProduct._id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updatedProduct),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
+
   return (
     <div className="my-[120px]">
       <div>
@@ -20,7 +53,10 @@ function UpdateCoffee() {
           using Lorem Ipsum is that it has a more-or-less normal distribution of
           letters, as opposed to using Content here.
         </p>
-        <form className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <form
+          onSubmit={handleUpdateProduct}
+          className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8"
+        >
           <div>
             <label className="block font-bold" htmlFor="name">
               Name
