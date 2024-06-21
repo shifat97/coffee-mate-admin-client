@@ -1,5 +1,7 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa6";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function UpdateCoffee() {
   const loadedProduct = useLoaderData();
@@ -31,7 +33,9 @@ function UpdateCoffee() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        if (data.acknowledged) {
+          toast("Product updated successfully");
+        }
       });
   };
 
@@ -143,6 +147,7 @@ function UpdateCoffee() {
           </div>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 }

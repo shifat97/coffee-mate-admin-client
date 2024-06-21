@@ -6,8 +6,20 @@ import { MdErrorOutline } from "react-icons/md";
 import { FaRegCheckCircle } from "react-icons/fa";
 import { useState } from "react";
 
-function Product({ coffee }) {
+function Product({ coffee, handleDataAfterDelete }) {
   const [deleted, setDeleted] = useState(false);
+
+  const handleDeleteProduct = (_id) => {
+    fetch(`http://localhost:5000/view-product/${_id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          handleDataAfterDelete(_id);
+        }
+      });
+  };
 
   return (
     <div className="bg-[#F5F4F1] flex flex-col md:flex-row gap-4 items-center justify-between p-8 rounded-xl font-raleway text-[#1B1A1A] text-center md:text-left">
@@ -42,13 +54,18 @@ function Product({ coffee }) {
         </Link>
         <div
           className="bg-[#EA4744] p-2 rounded-md text-white cursor-pointer"
-          onClick={() => document.getElementById("my_modal_5").showModal()}
+          onClick={() =>
+            document.getElementById(`my_modal_${coffee._id}`).showModal()
+          }
         >
           <MdDelete />
         </div>
       </div>
 
-      <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+      <dialog
+        id={`my_modal_${coffee._id}`}
+        className="modal modal-bottom sm:modal-middle"
+      >
         <div className="modal-box">
           {deleted ? (
             <FaRegCheckCircle className="text-[#A5DC86] text-[120px] text-center mx-auto" />
@@ -85,6 +102,7 @@ function Product({ coffee }) {
             <button
               onClick={() => {
                 setDeleted(true);
+                handleDeleteProduct(coffee._id);
               }}
               className={`btn  ${
                 deleted ? "bg-[#63C7F6]" : "bg-[#E64942]"
@@ -101,6 +119,7 @@ function Product({ coffee }) {
 
 Product.propTypes = {
   coffee: PropTypes.object,
+  handleDataAfterDelete: PropTypes.func,
 };
 
 export default Product;

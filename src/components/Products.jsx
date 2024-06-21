@@ -20,6 +20,11 @@ function Products() {
       .then((data) => setData(data));
   }, []);
 
+  const handleDataAfterDelete = (_id) => {
+    const newData = data.filter((d) => d._id !== _id);
+    setData(newData);
+  };
+
   return (
     <div className="my-[120px]">
       <p className="font-raleway text-center">--- Sip & Savor ---</p>
@@ -34,7 +39,11 @@ function Products() {
       </Link>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-10">
         {data.map((d) => (
-          <Product key={d._id} coffee={d} />
+          <Product
+            key={d._id}
+            coffee={d}
+            handleDataAfterDelete={handleDataAfterDelete}
+          />
         ))}
       </div>
       <div className="my-[120px]">
